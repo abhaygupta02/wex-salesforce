@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Action_Name_with_Status_And_M</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Milestone__c</columns>
+    <filterScope>Mine</filterScope>
+    <label>Action Name with Status And MileStone</label>
+</ListView>

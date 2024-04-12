@@ -1,0 +1,73 @@
+<template>
+    <template lwc:if={showProjectScreen}>
+        <lightning-card title="Create Project">
+            <div class="slds-p-around_medium">
+                <lightning-record-edit-form object-api-name="Project__c" onsuccess={handleProjectSuccess} onerror={handleError}>
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col">
+                            <lightning-input-field field-name="Name" required></lightning-input-field>
+                        </div>
+                    </div>
+                    <div class="slds-m-top_medium">
+                        <lightning-button type="submit" label="Create Project"></lightning-button>
+                    </div>
+                </lightning-record-edit-form>
+            </div>
+        </lightning-card>
+    </template>
+    <template lwc:if={showMileStoneScreen}>
+        <lightning-card title="Create Milestones">
+            <div class="slds-p-around_medium">
+                <lightning-record-edit-form object-api-name="Milestone__c" onsuccess={handleMileStoneSuccess} onerror={handleError}>
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col">
+                            <lightning-input-field field-name="Name" required></lightning-input-field>
+                            <lightning-input-field field-name="Project__c" value={projectId} disabled></lightning-input-field>
+                        </div>
+                    </div>
+                    <div class="slds-m-top_medium">
+                        <lightning-button type="submit" label="Create Milestone"></lightning-button>
+                    </div>
+                </lightning-record-edit-form>
+            </div>
+        </lightning-card>
+    </template>
+    <template lwc:if={showToDoScreen}>
+        <lightning-card title="Create To-do Items">
+            <template for:each={itemList} for:item="item" for:index="index">
+                <lightning-record-edit-form key={item.id} object-api-name="Action_Item__c">
+                    <lightning-layout multiple-rows>
+
+                        <lightning-layout-item size="12" large-device-size="2" padding="around-small">
+                            <lightning-input-field field-name="Name" variant="label-stacked" data-index={index} onchange={handleNameChange} required></lightning-input-field>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" large-device-size="2" padding="around-small">
+                            <lightning-input-field field-name="Status__c" variant="label-stacked" data-index={index} onchange={handleStatusChange} required></lightning-input-field>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" large-device-size="2" padding="around-small">
+                            <lightning-input-field field-name="Milestone__c" value={milestoneId} variant="label-stacked" data-index={index} onchange={handleMilestoneChange} disabled></lightning-input-field>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="12" large-device-size="2" padding="around-small">
+                            <div class="slds-p-top_medium">
+                                <lightning-button type="button" label="Add" access-key={item.id} id={index}
+                                     onclick={addRow}>
+                                </lightning-button>
+                                <lightning-button class="slds-m-left_small" type="button" label="Remove" access-key={item.id} id={index} onclick={removeRow}>
+                                </lightning-button>
+                            </div>
+                        </lightning-layout-item>
+
+                    </lightning-layout>
+                </lightning-record-edit-form>
+            </template>
+            </br>
+            <lightning-layout>
+                <div class="slds-align_absolute-center">
+                    <lightning-button variant="brand" onclick={handleSubmit} name="Create To-do Items"
+                    label="Submit">
+                    </lightning-button>
+                </div>
+            </lightning-layout>
+        </lightning-card>
+    </template>
+</template>

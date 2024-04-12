@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+	<types>
+		<members>Action_Item__c.Milestone__c</members>
+		<members>Action_Item__c.Status__c</members>
+        <members>Action_Item__c.Name</members>
+		<name>CustomField</name>
+	</types>
+	<types>
+		<members>Action_Item__c</members>
+		<members>Milestone__c</members>
+		<members>Project__c</members>
+		<name>CustomObject</name>
+	</types>
+	<version>58.0</version>
+</Package>
