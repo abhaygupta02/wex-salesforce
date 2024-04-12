@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+	<types>
+		<members>ActionItemService</members>
+		<members>ActionItemTriggerHandler</members>
+		<members>MilestoneService</members>
+		<members>MilestoneTriggerHandler</members>
+		<members>TriggerHandler</members>
+		<name>ApexClass</name>
+	</types>
+	<types>
+		<members>ActionItemTrigger</members>
+		<members>MilestoneTrigger</members>
+		<name>ApexTrigger</name>
+	</types>
+	<types>
+		<members>Action_Item__c.Milestone__c</members>
+		<members>Action_Item__c.Status__c</members>
+		<members>Milestone__c.MileStone_Percentage_Completion__c</members>
+		<members>Milestone__c.Project__c</members>
+		<members>Milestone__c.Status__c</members>
+		<members>Project__c.Percentage_Complete__c</members>
+		<members>Project__c.Status__c</members>
+		<members>Trigger_Setting__c.Disable_Action_Item_Trigger__c</members>
+		<members>Trigger_Setting__c.Disable_Milestone_Trigger__c</members>
+		<name>CustomField</name>
+	</types>
+	<types>
+		<members>Action_Item__c</members>
+		<members>Milestone__c</members>
+		<members>Project__c</members>
+		<members>Trigger_Setting__c</members>
+		<name>CustomObject</name>
+	</types>
+	<types>
+		<members>Action_Item__c-Action Item Layout</members>
+		<members>Milestone__c-Milestone Layout</members>
+		<members>Project__c-Project Layout</members>
+		<name>Layout</name>
+	</types>
+	<types>
+		<members>projectCreation</members>
+		<name>LightningComponentBundle</name>
+	</types>
+	<version>58.0</version>
+</Package>
